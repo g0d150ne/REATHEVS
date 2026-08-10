@@ -13,7 +13,7 @@
 
 ## 📌 Description
 
-**DeathEye WHOIS CLI** is a fast, lightweight, and flexible command-line tool for performing **WHOIS** domain lookups. It supports both raw socket mode (no external dependencies) and **python-whois** if installed. Works on Linux, macOS, or Windows with Python 3.
+**REATHEVS WHOIS CLI** is a fast, lightweight, and flexible command-line tool for performing **WHOIS** domain lookups. It supports both raw socket mode (no external dependencies) and **python-whois** if installed. Works on Linux, macOS, or Windows with Python 3.
 
 
 
@@ -131,7 +131,7 @@ Registrar URL: http://res-dom.iana.org
 ## 📁 Project Structure
 
 ```
-DeathEye-Whois/
+REATHEVS/
 ├── whois_cli.py      # Main program
 ├── README.md         # Documentation
 ├── domains.txt       # (Optional) Domain list
