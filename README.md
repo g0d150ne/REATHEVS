@@ -41,8 +41,8 @@ python3 --version  # Minimum Python 3.6
 
 ### 2. Clone or Download
 ```bash
-git clone https://github.com/g0d150ne/DeathEye-Whois
-cd DeathEye-Whois
+git clone https://github.com/g0d150ne/REATHEVS
+cd REATHEVS
 chmod +x whois_cli.py
 ```
 
