@@ -11,58 +11,60 @@
 ====================================================================
 ```
 
-## 📌 Deskripsi
+## 📌 Description
 
-**DeathEye WHOIS CLI** adalah command-line tool untuk pencarian WHOIS domain yang cepat, ringan, dan fleksibel. Mendukung mode socket mentah (tanpa dependensi eksternal) maupun `python-whois` jika terpasang.
-
-
-## ✨ Fitur
-
-| Fitur | Keterangan |
-|-------|------------|
-| 🔎 WHOIS Lookup | Domain tunggal atau batch dari file |
-| ⚡ Auto-detect Server | Deteksi otomatis berdasarkan TLD |
-| 🌐 Referral Follow | Dukungan follow referral WHOIS |
-| 🧩 Output Format | `text` atau `json` |
-| 🔒 Offline Mode | Berjalan tanpa `python-whois` |
-| 🧠 Timeout Config | Timeout koneksi bisa diatur |
-| 🛠️ Server Override | Manual override WHOIS server |
-| 🚫 No Referral | Opsi nonaktifkan referral |
+**DeathEye WHOIS CLI** is a fast, lightweight, and flexible command-line tool for performing **WHOIS** domain lookups. It supports both raw socket mode (no external dependencies) and **python-whois** if installed. Works on Linux, macOS, or Windows with Python 3.
 
 
-## 📦 Instalasi
 
-### 1. Prasyarat
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔎 WHOIS Lookup | Single domain or batch from file |
+| ⚡ Auto-detect Server | Automatic detection based on TLD |
+| 🌐 Referral Follow | Supports advanced WHOIS referral following |
+| 🧩 Output Format | `text` or `json` |
+| 🔒 Offline Mode | Works without `python-whois` dependency |
+| 🧠 Timeout Config | Adjustable connection timeout |
+| 🛠️ Server Override | Manual WHOIS server override |
+| 🚫 No Referral | Option to disable referral following |
+
+
+
+## 📦 Installation
+
+### 1. Prerequisites
 ```bash
-python3 --version  # Minimal Python 3.6
+python3 --version  # Minimum Python 3.6
 ```
 
-### 2. Clone atau Download
+### 2. Clone or Download
 ```bash
 git clone https://github.com/g0d150ne/DeathEye-Whois
 cd DeathEye-Whois
 chmod +x whois_cli.py
 ```
 
-### 3. (Opsional) Install python-whois
+### 3. (Optional) Install python-whois
 ```bash
 pip install python-whois
 ```
 
 
-## 🚀 Penggunaan
+## 🚀 Usage
 
-### Dasar
+### Basic
 ```bash
 python3 whois_cli.py example.com
 ```
 
-### Output JSON
+### JSON Output
 ```bash
 python3 whois_cli.py -o json example.com
 ```
 
-### Batch Mode (file domain list)
+### Batch Mode (domain list file)
 ```bash
 python3 whois_cli.py -b domains.txt
 ```
@@ -72,18 +74,19 @@ python3 whois_cli.py -b domains.txt
 python3 whois_cli.py -s whois.crsnic.net example.com
 ```
 
-### Nonaktifkan Referral
+### Disable Referral
 ```bash
 python3 whois_cli.py --no-referral example.com
 ```
 
-### Mode Tenang (raw output)
+### Quiet Mode (raw output only)
 ```bash
 python3 whois_cli.py -q example.com
 ```
 
 
-## 🧾 Contoh Output
+
+## 🧾 Example Output
 
 ```bash
 $ python3 whois_cli.py example.com
@@ -102,7 +105,7 @@ Registrar URL: http://res-dom.iana.org
 ====================================================================
 ```
 
-### Output JSON
+### JSON Output
 ```json
 {
   "domain": "example.com",
@@ -112,52 +115,56 @@ Registrar URL: http://res-dom.iana.org
 ```
 
 
-## ⚙️ Opsi Lengkap
+## ⚙️ Full Options
 
-| Opsi | Deskripsi | Default |
-|------|-----------|---------|
-| `-s, --server` | WHOIS server manual | (auto) |
-| `-p, --port` | Port WHOIS server | 43 |
-| `-t, --timeout` | Timeout koneksi (detik) | 8 |
-| `-o, --output` | Format: `text` / `json` | text |
-| `-b, --batch` | File daftar domain | - |
-| `-q, --quiet` | Mode tenang (raw only) | false |
-| `--no-referral` | Nonaktifkan follow referral | false |
+| Option | Description | Default |
+|--------|-------------|---------|
+| `-s, --server` | Manual WHOIS server | (auto) |
+| `-p, --port` | WHOIS server port | 43 |
+| `-t, --timeout` | Connection timeout (seconds) | 8 |
+| `-o, --output` | Output format: `text` / `json` | text |
+| `-b, --batch` | File with domain list | - |
+| `-q, --quiet` | Quiet mode (raw only) | false |
+| `--no-referral` | Disable referral following | false |
 
 
-## 📁 Struktur Proyek
+## 📁 Project Structure
 
 ```
 DeathEye-Whois/
 ├── whois_cli.py      # Main program
-├── README.md         # Dokumentasi
-├── domains.txt       # (Opsional) Daftar domain
+├── README.md         # Documentation
+├── domains.txt       # (Optional) Domain list
 └── LICENSE           # MIT License
 ```
 
 
-## 🧠 Cara Kerja
 
-1. **Deteksi TLD** → Cari WHOIS server yang sesuai
-2. **Query WHOIS** → Kirim request ke server
-3. **Follow Referral** → Jika ada referral, lanjutkan ke server baru
-4. **Parse & Tampilkan** → Output sesuai format yang dipilih
+## 🧠 How It Works
+
+1. **TLD Detection** → Find appropriate WHOIS server
+2. **WHOIS Query** → Send request to server
+3. **Follow Referral** → If referral exists, continue to new server
+4. **Parse & Display** → Output in selected format
+
 
 
 ## 🛠️ Troubleshooting
 
-| Masalah | Solusi |
-|---------|--------|
-| `Connection timeout` | Coba `--timeout 15` |
-| `No WHOIS server found` | Gunakan `-s` untuk manual override |
-| `Referral loop` | Gunakan `--no-referral` |
+| Issue | Solution |
+|-------|----------|
+| `Connection timeout` | Try `--timeout 15` |
+| `No WHOIS server found` | Use `-s` for manual override |
+| `Referral loop` | Use `--no-referral` |
 | `Permission denied` | `chmod +x whois_cli.py` |
+
 
 
 ## 📋 Dependencies
 
-- **Python 3.6+** (wajib)
-- **python-whois** (opsional, untuk fallback)
+- **Python 3.6+** (required)
+- **python-whois** (optional, for fallback)
+
 
 
 ## 🧑‍💻 Author
@@ -167,15 +174,16 @@ DeathEye-Whois/
 - License: MIT
 
 
+
 ## ⚠️ Disclaimer
 
-> Tools ini dibuat untuk **tujuan edukasi dan administrasi sistem**.  
-> Penggunaan terhadap domain pihak ketiga tanpa izin adalah **tanggung jawab pengguna**.
+> This tool is for **educational and system administration purposes only**.  
+> Usage against third-party domains without permission is the **user's responsibility**.
+
 
 
 ```
 💀 "Watch the Net. See everything. Fear nothing." — g0d150ne
-```
 
 ## 📄 License
 
