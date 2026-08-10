@@ -7,7 +7,7 @@
 ██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══██║██╔══╝  ╚██╗ ██╔╝╚════██║
 ██║  ██║███████╗██║  ██║   ██║   ██║  ██║███████╗ ╚████╔╝ ███████║
 ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝  ╚═══╝  ╚══════╝
-                        Whois CLI by DeathEye
+                        Whois CLI by g0d150ne
 ====================================================================
 ```
 
@@ -115,7 +115,7 @@ DeathEye-Whois/
 
 ## 🧑‍💻 Author
 **DeathEye** — Cyber Security & Automation Enthusiast 🕶️  
-GitHub: [github.com/deatheye-labs](https://github.com/deatheye-labs)  
+GitHub: [github.com/g0d150ne](https://github.com/g0d150ne)  
 License: MIT  
 
 ## 🧩 Catatan
@@ -123,5 +123,5 @@ License: MIT
 > Penggunaan terhadap domain pihak ketiga tanpa izin adalah tanggung jawab pengguna.
 
 ```
-💀 "Watch the Net. See everything. Fear nothing." — DeathEye
+💀 "Watch the Net. See everything. Fear nothing." — g0d150ne
 ```
